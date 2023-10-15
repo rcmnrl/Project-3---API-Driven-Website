@@ -252,7 +252,7 @@
   fetch(url, requestOptions)
     .then((response) => response.json())
     .then((data) => {
-      nextPageUrl = data.next; // Store the URL of the next page
+      nextPageUrl = data.next; 
       data.results.forEach((game) => {
         const card = createClickableGameCard(game);
         gameCards.appendChild(card);
@@ -276,14 +276,14 @@ function createClickableGameCard(game) {
     </div>
   `;
 
-  // Add a click event listener to the image
+
   const clickableGameImage = card.querySelector(".clickable-game-image");
   clickableGameImage.addEventListener("click", () => {
     const gameId = clickableGameImage.getAttribute("data-game-id");
     fetchGameDetails(gameId);
   });
 
-  // Change the cursor to a pointer when hovering over the image
+
   clickableGameImage.style.cursor = "pointer";
 
   return card;
@@ -350,7 +350,7 @@ function fetchGameDetails(gameId) {
  
 
 const selectReleaseYear = document.getElementById("selectReleaseYear");
-const clearFilterButton = document.getElementById("clearFilter"); // Updated ID to "clearFilter"
+const clearFilterButton = document.getElementById("clearFilter");
 const currentYear = new Date().getFullYear();
 
 
